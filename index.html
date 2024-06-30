@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz</title>
+    <style>
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .option img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .option:hover {
+            background: #f1f1f1;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        .progress {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .timer {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .submit-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>General Knowledge</h1>
+        <form id="quiz-form" onsubmit="submitQuiz(event)">
+            <div id="question-container">
+                <div class="question">
+                    <p id="question-text">What is the capital of India?</p>
+                    <div class="option">
+                        <input type="checkbox" name="option" value="0">
+                        <img src="https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg" alt="Option 1">
+                        <span>Mumbai</span>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="option" value="1">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSOg9kPXQnT16Vq1LEQcekBft3WG-4Ar3ZoHDGRbclJ94i825msPy7omTnFnf5B31XxvMea4L9eR7zOY-cqDVoEPcMsrXrIBtWN3eDOxn4" alt="Option 2">
+                        <span>New Delhi</span>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="option" value="2">
+                        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRxk3PCaVAIl6NC50O7jKizccgq-aMZbpW3rPq3vmbcuFeUdc85Edhzu4QjWqCMHJ-NzB__WnKn4SeJbI-jJSzxgsdMJzFPwZcsn__xhw" alt="Option 3">
+                        <span>Kolkata</span>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="option" value="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Chennai_Central.jpg" alt="Option 4">
+                        <span>Chennai</span>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div class="progress" id="progress"></div>
+        <div class="timer" id="timer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
